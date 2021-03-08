@@ -35,8 +35,8 @@ const colors = {
     // tabInactiveColor: colors.grey_1,
   
     // Spinner
-    // spinnerBackground: colors.black,
-    // spinnerIndicator: colors.white,
+    spinnerBackground: colors.black,
+    spinnerIndicator: colors.white,
   
     // List
     // listBorder: colors.grey_0,
