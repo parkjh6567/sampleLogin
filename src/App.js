@@ -3,12 +3,11 @@ import { StatusBar, Image } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
-import { exp } from 'react-native/Libraries/Animated/src/Easing';
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from './theme';
 import Navigation from './navigations';
 import { images } from "./utils/images";
-import { ProgrssProvider } from './contexts';
+import { ProgressProvider, UserProvider } from './contexts';
 
 const cacheImages = images => {
     return images.map(image => {
@@ -37,19 +36,21 @@ const App = () => {
     };
 
     return isReady ? (
-        <ThemeProvider theme={theme}>
-          <ProgrssProvider>
+      <ThemeProvider theme={theme}>
+        <UserProvider>
+          <ProgressProvider>
             <StatusBar barStyle="dark-content" />
             <Navigation />
-          </ProgrssProvider>
-        </ThemeProvider>
+          </ProgressProvider>
+        </UserProvider>
+      </ThemeProvider>
     ) : (
-        <AppLoading
-          startAsync={_loadAssets}
-          onFinish={() => setIsReady(true)}
-          onError={console.warn}
-        />
-      );
+      <AppLoading
+        startAsync={_loadAssets}
+        onFinish={() => setIsReady(true)}
+        onError={console.warn}
+      />
+    );
 };
 
 export default App;

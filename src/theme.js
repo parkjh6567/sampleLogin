@@ -21,30 +21,30 @@ const colors = {
     label: colors.grey_1,
     inputPlaceholder: colors.grey_1,
     inputBorder: colors.grey_1,
-    // inputDisabledBackground: colors.grey_0,
+    inputDisabledBackground: colors.grey_0,
   
     // Button Component
     buttonBackground: colors.blue,
     buttonTitle: colors.white,
     buttonUnfilledTitle: colors.blue,
-    // buttonLogout: colors.red,
+    buttonLogout: colors.red,
   
     // Navigation
     headerTintColor: colors.black,
-    // tabActiveColor: colors.blue,
-    // tabInactiveColor: colors.grey_1,
+    tabActiveColor: colors.blue,
+    tabInactiveColor: colors.grey_1,
   
     // Spinner
     spinnerBackground: colors.black,
     spinnerIndicator: colors.white,
   
     // List
-    // listBorder: colors.grey_0,
-    // listTime: colors.grey_1,
-    // listDescription: colors.grey_1,
-    // listIcon: colors.black,
+    listBorder: colors.grey_0,
+    listTime: colors.grey_1,
+    listDescription: colors.grey_1,
+    listIcon: colors.black,
   
     // GiftedChat
-    // sendButtonActivate: colors.blue,
-    // sendButtonInactivate: colors.grey_1,
+    sendButtonActivate: colors.blue,
+    sendButtonInactivate: colors.grey_1,
   };

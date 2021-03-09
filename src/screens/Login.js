@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import styled from 'styled-components/native';
 import { Text, Button } from 'react-native';
 import { Image, Input } from '../components';
@@ -9,8 +9,7 @@ import { validateEmail, removeWhitespace } from '../utils/common';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Alert } from 'react-native';
 import { login } from '../utils/firebase';
-import { ProgrssContext } from '../contexts';
-import { useContext } from 'react';
+import { ProgressContext, UserContext } from '../contexts';
 
 const Container = styled.View`
     flex: 1;
@@ -31,14 +30,15 @@ const ErrorText = styled.Text`
 `;
 
 const Login = ({ navigation }) => {
+    const { dispatch } = useContext(UserContext);
     const insets = useSafeAreaInsets();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const passwordRef = useRef();
     const [errorMessage, setErrorMessage] = useState('');
     const [disabled, setDisabled] = useState(true);
-    const { spinner } = useContext(ProgrssContext);
-
+    const { spinner } = useContext(ProgressContext);
+    
     useEffect(() => {
         setDisabled(!(email && password && !errorMessage));
       }, [email, password, errorMessage]);
@@ -60,6 +60,7 @@ const Login = ({ navigation }) => {
             spinner.start();
             const user = await login({email, password});
             Alert.alert('Login Success', user.email);
+            dispatch(user);
         }catch (e) {
             Alert.alert('Login Error', e.message);
         } finally {

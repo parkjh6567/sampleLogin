@@ -1,4 +1,4 @@
-import { exp } from 'react-native/Libraries/Animated/src/Easing';
-import { ProgrssContext, ProgrssProvider } from './Progress';
+import { ProgressContext, ProgressProvider } from './Progress';
+import { UserContext, UserProvider } from './User';
 
-export { ProgrssContext, ProgrssProvider};
+export { ProgressContext, ProgressProvider, UserContext, UserProvider };

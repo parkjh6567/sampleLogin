@@ -3,7 +3,6 @@ import { ThemeContext } from 'styled-components/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Channel, ChannelCreation } from '../screens';
 import { useContext } from 'react';
-import { exp } from 'react-native/Libraries/Animated/src/Easing';
 import MainTab from './MainTab';
 
 const Stack = createStackNavigator();
