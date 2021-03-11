@@ -1,10 +1,9 @@
-import React,  { useContext } from 'react';
+import React,  { useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components/native';
-import { Text } from 'react-native';
+import { Text, Alert } from 'react-native';
 import { Button, Image, Input } from '../components';
 import { logout, getCurrentUser, updateUserPhoto } from '../utils/firebase';
 import { UserContext, ProgressContext } from '../contexts';
-import { Alert } from 'react-native';
 
 const Container = styled.View`
     felx: 1;
