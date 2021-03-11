@@ -13,8 +13,8 @@ const Container = styled.View`
 const StyledImage = styled.Image`
   background-color: ${({ theme }) => theme.imageBackground};
   width: 100px;
-  height: 100px;  
-  border-radius: ${({ rounded }) => (rounded ? 50 :0)}px;
+  height: 100px;
+  border-radius: ${({ rounded }) => (rounded ? 50 : 0)}px;
 `;
 
 const ButtonContainer = styled.TouchableOpacity`
@@ -42,7 +42,7 @@ const PhotoButton = ({ onPress }) => {
   );
 };
 
-const Image = ({ url, imageStyle, rounded, showButton }) => {
+const Image = ({ url, imageStyle, rounded, showButton, onChangeImage }) => {
   useEffect(() => {
     (async () => {
       try {

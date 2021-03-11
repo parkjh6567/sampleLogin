@@ -38,8 +38,7 @@ const SendButton = props => {
   };
 
 const Channel = ({ navigation, route: { params } }) => {
-    const [messages, setMessages] = useState([]);
-    const [text, setText] = useState([]);
+    const [messages, setMessages] = useState([]);    
     const theme = useContext(ThemeContext);
     const { uid, name, photoUrl } = getCurrentUser();
 
@@ -90,26 +89,26 @@ const Channel = ({ navigation, route: { params } }) => {
                 onSubmitEditing={() => createMessage({ channelId: params.id, text })}
             /> */}
 
-<GiftedChat
-        listViewProps={{
-          style: { backgroundColor: theme.background },
-        }}
-        placeholder="Enter a message..."
-        messages={messages}
-        user={{ _id: uid, name, avatar: photoUrl }}
-        onSend={_handleMessageSend}
-        alwaysShowSend={true}
-        textInputProps={{
-          autoCapitalize: 'none',
-          autoCorrect: false,
-          textContentType: 'none', // iOS only
-          underlineColorAndroid: 'transparent', // Android only
-        }}
-        multiline={false}
-        renderUsernameOnMessage={true}
-        scrollToBottom={true}
-        renderSend={props => <SendButton {...props} />}
-      />
+          <GiftedChat
+                  listViewProps={{
+                    style: { backgroundColor: theme.background },
+                  }}
+                  placeholder="Enter a message..."
+                  messages={messages}
+                  user={{ _id: uid, name, avatar: photoUrl }}
+                  onSend={_handleMessageSend}
+                  alwaysShowSend={true}
+                  textInputProps={{
+                    autoCapitalize: 'none',
+                    autoCorrect: false,
+                    textContentType: 'none', // iOS only
+                    underlineColorAndroid: 'transparent', // Android only
+                  }}
+                  multiline={false}
+                  renderUsernameOnMessage={true}
+                  scrollToBottom={true}
+                  renderSend={props => <SendButton {...props} />}
+                />
         </Container>
     );
 };
